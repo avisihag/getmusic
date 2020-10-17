@@ -9,7 +9,7 @@ with open('musicplist.txt', 'r') as f:
         j = ytlink(i)
         time.sleep(1)
         p1 = subprocess.run(['youtube-dl', '-x', '--audio-format', 'mp3', '-o',
-                             '/Users/avisihag/Desktop/Music/%(title)s.%(ext)s', j], capture_output=True, text=True)
+                             './%(title)s.%(ext)s', j], capture_output=True, text=True)
         x = p1.stdout
         time.sleep(1)
         obj = re.compile(r"Music/[^/]+.mp3")
